@@ -14,8 +14,8 @@ const NavBar = () => {
         <Link className="li" to="/contact">
           Contact
         </Link>
-        <Link className="li" to="/user">
-          Usuarios de
+        <Link className="li" to="/user/user">
+          User
         </Link>
       </ul>
     </nav>
