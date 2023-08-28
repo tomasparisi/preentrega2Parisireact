@@ -1,31 +1,27 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import "./listUser.css";
-
 import { Link } from "react-router-dom";
-
 import Item from "../ItemListContainer/item/item";
+import "../listUser/listUser.css"
 
 const ListUser = () => {
-  const [chars, setChars] = useState([]);
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
     axios("https://api.github.com/users").then((response) => {
-      setChars(response.data);
-  });
+      setUsers(response.data);
+    });
   }, []);
 
   return (
     <div className="Cards-List">
-      {chars.map((char) => {
-        return (
-          <div key={char.id}>
-            <Link to={`/details/${char.login}`}> 
-              <Item data={char} />
-            </Link>
-          </div>
-        );
-      })}
+      {users.map((user) => (
+        <div key={user.id}>
+          <Link to={`/user/${user.login}`}> 
+            <Item data={user} />
+          </Link>
+        </div>
+      ))}
     </div>
   );
 };
