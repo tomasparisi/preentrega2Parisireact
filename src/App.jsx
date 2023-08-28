@@ -1,7 +1,5 @@
 import "./App.css";
-import ItemListContainer from "./components/ItemListContainer/index";
-import Navbar from "./components/Navbar";
-
+import Navbar from "./components/Navbar/index";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 //pages
@@ -24,7 +22,7 @@ const App = () => {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/detail/:id" element={<DetailPage />} />
-          <Route path="/user/:UserId" element={<UserPage />} />
+          <Route path="/user/:user" element={<UserPage />} />
         </Routes>
       </div>
     </Router>

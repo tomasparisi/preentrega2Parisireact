@@ -15,7 +15,7 @@ const NavBar = () => {
           Contact
         </Link>
         <Link className="li" to="/user">
-          Usuarios de Github
+          Usuarios de
         </Link>
       </ul>
     </nav>
