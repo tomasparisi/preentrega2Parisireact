@@ -1,7 +1,16 @@
-.main {
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(168, 206, 239);
-  min-height: 100vh;
-  width: 100vh;
+* {
+  margin: 0;
+  padding: 0;
 }
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+body {
+  background-color: #9162cf; /* You can change this color */
+  margin: 0;
+  padding: 0;
+}
+

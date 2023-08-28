@@ -1,14 +1,34 @@
 import "./App.css";
-import ItemListContainer from "./components/ItemListContainer";
+import ItemListContainer from "./components/ItemListContainer/index";
 import Navbar from "./components/Navbar";
 
-function App() {
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+//pages
+
+import Contact from "./pages/Contact/contact";
+import AboutPage from "./pages/About/about";
+import HomePage from "./pages/home/home";
+import DetailPage from "./pages/Detail/detailPage";
+import UserPage from "./pages/User/user";
+
+
+
+const App = () => {
   return (
-    <main className="main">
-      <Navbar />
-      <ItemListContainer greetings="Informar stock" />
-    </main>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/detail/:id" element={<DetailPage />} />
+          <Route path="/user/:UserId" element={<UserPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
