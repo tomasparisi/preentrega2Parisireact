@@ -3,7 +3,7 @@ import "./styles.css";
 import axios from "axios";
 import Item from "./item/item";
 import "./styles.css";
-import { Link } from "react-router-dom";
+
 
 const ItemListContainer = () => {
   const [users, setUsers] = useState([]);

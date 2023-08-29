@@ -5,15 +5,13 @@ import { useParams } from "react-router-dom";
 import Item from "../../components/ItemListContainer/item/item";
 
 const DetailPage = () => {
-  const [users, setUsers] = useState([]); 
-
-  console.log(users);
+  const [users, setUsers] = useState([]);
 
   let { id } = useParams();
 
   useEffect(() => {
     axios(`https://api.github.com/users`).then((response) => {
-      const filteredUsers = response.data.filter((user) => user.type === "User"); 
+      const filteredUsers = response.data.filter((user) => user.id == id); 
       setUsers(filteredUsers); 
     });
   }, [id]);

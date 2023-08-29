@@ -17,7 +17,7 @@ const ListUser = () => {
     <div className="Cards-List">
       {users.map((user) => (
         <div key={user.id}>
-          <Link to={`/user/${user.login}`}> 
+          <Link to={`/details/${user.id}`}> 
             <Item data={user} />
           </Link>
         </div>

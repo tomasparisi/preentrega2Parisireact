@@ -6,17 +6,19 @@ import Item from "../../components/ItemListContainer/item/item";
 const UserPage = () => {
   const [users, setUsers] = useState([]);
 
-  console.log("users", users);
+  console.log("Dentro")
 
-  let { user } = useParams(); 
+  let { userType } = useParams();
+
+  let filteredUsers = users.filter((user) => {
+    return user.type === userType;
+  });
 
   useEffect(() => {
     axios("https://api.github.com/users").then((response) => {
       setUsers(response.data);
     });
   }, []);
-
-  let filteredUsers = users.filter((u) => u.login === user); 
 
   return (
     <div className="Cards-List">

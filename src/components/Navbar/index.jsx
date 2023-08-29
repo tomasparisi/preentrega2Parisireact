@@ -14,8 +14,11 @@ const NavBar = () => {
         <Link className="li" to="/contact">
           Contact
         </Link>
-        <Link className="li" to="/user/user">
+        <Link className="li" to="/user/User">
           User
+        </Link>
+        <Link className="li" to="/user/Organization">
+          Organization
         </Link>
       </ul>
     </nav>
