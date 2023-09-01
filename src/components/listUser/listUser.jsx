@@ -8,7 +8,7 @@ const ListUser = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    axios("https://api.github.com/users").then((response) => {
+    axios("https://mocked-url.com/products").then((response) => {
       setUsers(response.data);
     });
   }, []);

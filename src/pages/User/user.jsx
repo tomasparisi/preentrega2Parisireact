@@ -15,7 +15,7 @@ const UserPage = () => {
   });
 
   useEffect(() => {
-    axios("https://api.github.com/users").then((response) => {
+    axios("https://mocked-url.com/products").then((response) => {
       setUsers(response.data);
     });
   }, []);

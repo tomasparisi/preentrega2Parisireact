@@ -10,7 +10,7 @@ const DetailPage = () => {
   let { id } = useParams();
 
   useEffect(() => {
-    axios(`https://api.github.com/users`).then((response) => {
+    axios("https://mocked-url.com/products").then((response) => {
       const filteredUsers = response.data.filter((user) => user.id == id); 
       setUsers(filteredUsers); 
     });
