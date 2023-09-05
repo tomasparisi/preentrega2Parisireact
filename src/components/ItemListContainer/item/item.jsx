@@ -9,7 +9,7 @@ const Item = ({ data }) => {
   return (
     <Card sx={{ maxWidth: 345, margin:2}}>
       <CardActionArea>
-        <CardMedia component="img" image={data.avatar_url} alt="green iguana" />
+        <CardMedia component="img" image={data.avatar_url} alt={data.login} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {data.login}

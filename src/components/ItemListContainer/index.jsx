@@ -9,7 +9,7 @@ const ItemListContainer = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    axios("https://api.github.com/users").then((json) => setUsers(json.data));
+    axios("https://mocked-url.com/products").then((json) => setUsers(json.data));
   }, []);
   return (
     <div className="Cards-List">

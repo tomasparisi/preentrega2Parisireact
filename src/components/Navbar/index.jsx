@@ -8,17 +8,20 @@ const NavBar = () => {
         <Link className="li" to="/">
           Home
         </Link>
-        <Link className="li" to="/about">
-          About
+        <Link className="li" to="product/Notebook">
+          Notebook
         </Link>
-        <Link className="li" to="/contact">
-          Contact
+        <Link className="li" to="/product/Desktop">
+          Pc escritorio
         </Link>
-        <Link className="li" to="/user/User">
-          User
+        <Link className="li" to="/product/Mouse">
+          Mouse
         </Link>
-        <Link className="li" to="/user/Organization">
-          Organization
+        <Link className="li" to="/product/Teclado">
+          Teclado
+        </Link>
+        <Link className="li" to="/product/Consola">
+          Consola
         </Link>
       </ul>
     </nav>
