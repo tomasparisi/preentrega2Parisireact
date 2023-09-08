@@ -22,7 +22,7 @@ mock.onGet("https://mocked-url.com/products").reply(200, [
     {
       "login": "Gamer-fps",
       "id": 2,
-      "avatar_url": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fstartechcomputacion.com.ar%2Fshop%2Fproduct%2Fgabinete-atx-rgb-naxido-q5b-1900&psig=AOvVaw3ganUPKPkdTBHW-QqGECb5&ust=1693945590520000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCPC685rlkYEDFQAAAAAdAAAAABAE",
+      "avatar_url": "https://axa.com.ar/webaxa/26204/gabinete-gamer-sentey-k20-super-4-fans-vidrio-templado.jpg",
       "type": "Desktop",
       "procesador":"intel",
       "modelo":"i7",
@@ -36,7 +36,7 @@ mock.onGet("https://mocked-url.com/products").reply(200, [
     {
       "login": "Lenovo-G",
       "id": 3,
-      "avatar_url": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.lenovo.com%2Far%2Fes%2Flaptops%2Flaptops-legion%2Flegion-5-series%2FLegion-5i-Gen-6-15-inch-Intel%2Fp%2FLEN101G0001&psig=AOvVaw2uAgUSI2WvCUfov6dWb385&ust=1693945907293000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCNCf97HmkYEDFQAAAAAdAAAAABAL",
+      "avatar_url": "https://www.lenovo.com/medias/lenovo-laptop-gaming-legion-slim-7-15in-amd-hero.png?context=bWFzdGVyfHJvb3R8MTg5NzU3fGltYWdlL3BuZ3xoYjcvaGIwLzE0NTI0Njk1MDUyMzE4LnBuZ3w4MGRjOGZiZWZhZmUwZWYwNmRmNGQ3ZDhhNWZiZWM3ZjNlM2ExMGMwYjhmOWNjNTk0OTYxMGUxOGQxNjNlYTBi",
       "type": "Notebook",
       "procesador":"AMD",
       "modelo":"5600x",
