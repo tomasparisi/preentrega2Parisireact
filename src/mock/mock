@@ -36,7 +36,7 @@ mock.onGet("https://mocked-url.com/products").reply(200, [
     {
       "login": "Lenovo-G",
       "id": 3,
-      "avatar_url": "https://www.lenovo.com/medias/lenovo-laptop-gaming-legion-slim-7-15in-amd-hero.png?context=bWFzdGVyfHJvb3R8MTg5NzU3fGltYWdlL3BuZ3xoYjcvaGIwLzE0NTI0Njk1MDUyMzE4LnBuZ3w4MGRjOGZiZWZhZmUwZWYwNmRmNGQ3ZDhhNWZiZWM3ZjNlM2ExMGMwYjhmOWNjNTk0OTYxMGUxOGQxNjNlYTBi",
+      "avatar_url": "https://depor.com/resizer/SV5A8TYUxOWSClJdwiX1wdsRWLk=/1200x1200/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/2BGHQ3NZDFE6BCZOMLXFSFHUPE.jpg",
       "type": "Notebook",
       "procesador":"AMD",
       "modelo":"5600x",
@@ -64,7 +64,7 @@ mock.onGet("https://mocked-url.com/products").reply(200, [
     {
       "login": "X-box-serie-x",
       "id": 5,
-      "avatar_url": "https://assets.xboxservices.com/assets/fb/d2/fbd2cb56-5c25-414d-9f46-e6a164cdf5be.png?n=XBX_A-BuyBoxBGImage01-D.png",
+      "avatar_url": "https://depor.com/resizer/e7aIrbksli5f5WxCDdFmmsPpgjY=/1200x1200/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/MAUL7PBYXVBYHKLSB7RV5NFH5Y.jpg",
       "type": "Consola",
       "procesador":"AMD",
       "modelo":"Ryzen Zen 2",
@@ -78,7 +78,7 @@ mock.onGet("https://mocked-url.com/products").reply(200, [
     {
       "login": "Predetor",
       "id": 6,
-      "avatar_url": "https://www.inovamusicnet.com/wp-content/uploads/2020/10/71k45hZkLmL._AC_SL1500_.jpg",
+      "avatar_url": "https://m.media-amazon.com/images/I/7183SjkrSnL.jpg",
       "type": "Notebook",
       "procesador":"AMD",
       "modelo":"Ryzen Zen 2",
@@ -92,7 +92,7 @@ mock.onGet("https://mocked-url.com/products").reply(200, [
     {
       "login": "nintendo-switch",
       "id": 7,
-      "avatar_url": "https://m.media-amazon.com/images/I/51Gz7IimgoL._AC_UF1000,1000_QL80_.jpg",
+      "avatar_url": "https://www.costco.com.au/medias/sys_master/images/h8d/h15/101453139247134.jpg",
       "type": "Consola",
       "procesador":"AMD",
       "modelo":"Ryzen Zen 2",
@@ -115,7 +115,7 @@ mock.onGet("https://mocked-url.com/products").reply(200, [
 
     },
     {
-      "login": "logitec-mecanico",
+      "login": "l-mecanico",
       "id": 9,
       "avatar_url": "https://logitechar.vtexassets.com/arquivos/ids/157662/920-009388_1.png?v=637388220605900000",
       "type": "Teclado",
@@ -127,7 +127,7 @@ mock.onGet("https://mocked-url.com/products").reply(200, [
     {
       "login": "generico",
       "id": 10,
-      "avatar_url": "https://resource.logitech.com/content/dam/logitech/en/products/keyboards/k120/gallery/k120-gallery-01-new.png",
+      "avatar_url": "https://preview.free3d.com/img/2017/09/2154250437937596350/8js081vb.jpg",
       "type": "Teclado",
       "respuesta":"1ms",
       "rgb": false ,

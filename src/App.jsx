@@ -4,10 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 //pages
 
-import PcPage from "./pages/PC escritorio/Pc escritorio";
-import NotebookPage from "./pages/Notebook/notebook";
-import DetailPage from "./pages/Detail/detailPage";
-import ProductPage from "./pages/Product/product";
+import ItemDetailContainer from "./pages/Detail/detailPage";
+import ItemListContainer from "./components/ItemListContainer/index";
 
 
 
@@ -17,11 +15,9 @@ const App = () => {
       <div className="App">
         <Navbar />
         <Routes>
-          <Route path="/" element={<ProductPage />} />
-          <Route path="/notebook" element={<NotebookPage />} />
-          <Route path="/pc" element={<PcPage />} />
-          <Route path="/details/:id" element={<DetailPage />} />
-          <Route path="/product/:productType" element={<ProductPage />} />
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/details/:id" element={<ItemDetailContainer />} />
+          <Route path="/product/:productType" element={<ItemListContainer />} />
         </Routes>
       </div>
     </Router>

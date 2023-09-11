@@ -1,66 +1,42 @@
-import { useState, useEffect } from "react";
-import "./styles.css";
 import axios from "axios";
-import Item from "./item/item";
-import "./styles.css";
-
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import Item from "../../components/ItemListContainer/item/item";
+import "./styles.css"
 
 const ItemListContainer = () => {
-  const [users, setUsers] = useState([]);
+  const [products, setProducts] = useState([]);
+
+  let { productType } = useParams();
 
   useEffect(() => {
-    axios("https://mocked-url.com/products").then((json) => setUsers(json.data));
-  }, []);
+    axios("https://mocked-url.com/products").then((response) => {
+      if (productType){
+        const data = response.data.filter((product) => {
+          return product.type === productType;
+        });
+        setProducts(data)
+      }
+      else {
+        axios("https://mocked-url.com/products").then((response) => {setProducts(response.data)});
+      }
+
+      
+    });
+  }, [productType]);
+
   return (
     <div className="Cards-List">
-      {users.map((user) => (
-        <Item key={user.id} data={user} />
+      {products.map((product) => (
+        <div style={{ margin: 10 }} key={product.id}>
+          <Link to={`/details/${product.id}`}> 
+            <Item data={product} />
+          </Link>
+        </div>
       ))}
     </div>
   );
 };
 
-// function ItemListContainer({ greetings }) {
-//   const [saludo, setSaludo] = useState(greetings);
-//   const [count, setCount] = useState(0);
-//   const [show, setShow] = useState(true);
-
-//   useEffect(() => {
-//     console.log(`la cuenta es: ${count}`);
-//   }, [count]);
-//   //useEffect se renderiza si tiene el arreglo de dependencias, en esta caso si no pongo [count], no habra en cambios en la consola
-//   // Las llamdas APIs tiene que estar dentro de los useEffect
-
-//   function hide() {
-//     setShow(false);
-//   }
-
-//   function aumenta() {
-//     setCount(count + 1);
-//   }
-
-//   function cambio() {
-//     setSaludo(7);
-//   }
-
-//   return (
-//     <div className="item-list-container">
-//       <p>{saludo}</p>
-//       <button onClick={cambio}>calcular stock</button>
-//       <button onClick={aumenta}>Aumentar + 1</button>
-//       <p>{count}</p>
-//       {show && <Im />}
-//       <button onClick={hide}>elimine img</button>
-//     </div>
-//   );
-// }
-
-// function Im() {
-//   return (
-//     <div>
-//       <p>AAAAAAAAA</p>
-//     </div>
-//   );
-// }
 
 export default ItemListContainer;
