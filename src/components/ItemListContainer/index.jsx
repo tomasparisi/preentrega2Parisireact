@@ -18,7 +18,7 @@ const ItemListContainer = () => {
         setProducts(data)
       }
       else {
-        axios("https://mocked-url.com/products").then((response) => {setProducts(response.data)});
+        setProducts(response.data);
       }
 
       

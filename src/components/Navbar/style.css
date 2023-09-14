@@ -1,26 +1,64 @@
+/* Navbar Container */
 .nav-container {
-  background-color: black;
-  height: 10vh;
   display: flex;
-  width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  background-color: #000000; 
+  padding: 10px 20px;
 }
 
+/* Logo */
+.logo {
+  width: 50px; /* Ajusta el tamaño del logo según tus necesidades */
+  height: 50px;
+}
+
+.logo1 {
+  width:  100px;
+  height: 100px;
+}
+
+/* Navigation Links */
 .nav-ul {
+  list-style: none;
+  padding: 0;
   display: flex;
-  width: 100%;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 
 .li {
-  color: white;
-  list-style-type: none;
-  text-decoration: none;
+  margin: 0 10px; /* Espaciado entre los enlaces */
 }
 
+/* Carrito y Lupa */
+.nav-right {
+  display: flex;
+  align-items: center;
+}
 
+.nav-icon {
+  font-size: 24px; /* Tamaño de los iconos de carrito y lupa */
+  margin-left: 20px; /* Espaciado entre los iconos */
+  color: white; /* Color de los iconos */
+}
+
+/* Estilo de iconos */
+.nav-icon a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Estilo al pasar el mouse sobre los enlaces */
+.li a:hover {
+  color: #ff5722; /* Cambia el color de los enlaces al pasar el mouse */
+}
+
+/* Estilo de los recuadros de productos */
+.nav-center {
+  display: flex;
+  align-items: center;
+}
 
 
 

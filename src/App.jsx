@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 //pages
 
-import ItemDetailContainer from "./pages/Detail/detailPage";
+import ItemDetailContainer from "./components/itemDetailContainer/detailPage";
 import ItemListContainer from "./components/ItemListContainer/index";
 
 

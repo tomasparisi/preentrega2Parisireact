@@ -5,6 +5,7 @@ import MockAdapter from "axios-mock-adapter";
 const mock = new MockAdapter(axios);
 
 mock.onGet("https://mocked-url.com/products").reply(200, [
+
     {
       "login": "Nitro-5",
       "id": 1,

@@ -2,9 +2,9 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import Item from "../../components/ItemListContainer/item/item";
+import Item from "../ItemListContainer/item/item";
 
-const DetailPage = () => {
+const ItemDetailContainer = () => {
   const [users, setUsers] = useState([]);
 
   let { id } = useParams();
@@ -25,4 +25,4 @@ const DetailPage = () => {
   );
 };
 
-export default DetailPage;
+export default ItemDetailContainer;
