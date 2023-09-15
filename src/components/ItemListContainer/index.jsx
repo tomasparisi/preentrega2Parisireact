@@ -1,42 +1,58 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import Item from "../../components/ItemListContainer/item/item";
-import "./styles.css"
+import React, { useState, useEffect } from "react";
+import Item from "./item/item"; // Cambiado a "CardProduct" para reflejar el nombre de componente adecuado
+import "./styles.css"; // Cambiado a "ListProduct.css" para reflejar el nombre de estilo adecuado
+import Spinner from "../spinner/spinner";
+import { Link } from "react-router-dom";
+import { collection, query, getDocs } from "firebase/firestore";
+import { db } from "../firebase/firebaseConfig";
 
 const ItemListContainer = () => {
-  const [products, setProducts] = useState([]);
-
-  let { productType } = useParams();
+  const [productsData, setProductsData] = useState([]); // Cambiado a "productsData" para reflejar la lista de productos
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    axios("https://mocked-url.com/products").then((response) => {
-      if (productType){
-        const data = response.data.filter((product) => {
-          return product.type === productType;
-        });
-        setProducts(data)
-      }
-      else {
-        setProducts(response.data);
-      }
+    const getProducts = async () => {
+      const q = query(collection(db, "products")); // Cambiado a "products" para reflejar la colección de productos
+      const docs = [];
 
-      
-    });
-  }, [productType]);
+      const querySnapshot = await getDocs(q);
+
+      querySnapshot.forEach((doc) => {
+        docs.push({ ...doc.data(), id: doc.id });
+      });
+
+      setProductsData(docs);
+    };
+    getProducts();
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+    
+  }, []);
 
   return (
-    <div className="Cards-List">
-      {products.map((product) => (
-        <div style={{ margin: 10 }} key={product.id}>
-          <Link to={`/details/${product.id}`}> 
-            <Item data={product} />
-          </Link>
+    <>
+      {isLoading ? (
+        <div className="Spinner">
+          <Spinner />
         </div>
-      ))}
-    </div>
+      ) : (
+        <div className="Cards-List"> 
+          {productsData.map((data) => { 
+            return (
+              <Link
+                to={`/details/${data.id}`}
+                key={data.id}
+                style={{ textDecoration: "none" }}
+              >
+                <Item product={data} /> {/* Cambiado a "CardProduct" para reflejar el nombre de componente adecuado */}
+              </Link>
+            );
+          })}
+        </div>
+      )}
+    </>
   );
 };
-
 
 export default ItemListContainer;
