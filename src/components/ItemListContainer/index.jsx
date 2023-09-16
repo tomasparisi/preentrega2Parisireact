@@ -14,13 +14,14 @@ const ItemListContainer = () => {
     const getProducts = async () => {
       const q = query(collection(db, "products")); // Cambiado a "products" para reflejar la colección de productos
       const docs = [];
-
       const querySnapshot = await getDocs(q);
+      console.log('DATA:', querySnapshot);
 
       querySnapshot.forEach((doc) => {
+      console.log('DATA:', doc.data(), 'ID:', doc.id);
         docs.push({ ...doc.data(), id: doc.id });
       });
-
+      console.log(docs);
       setProductsData(docs);
     };
     getProducts();
@@ -45,7 +46,7 @@ const ItemListContainer = () => {
                 key={data.id}
                 style={{ textDecoration: "none" }}
               >
-                <Item product={data} /> {/* Cambiado a "CardProduct" para reflejar el nombre de componente adecuado */}
+                <Item product={data} /> 
               </Link>
             );
           })}

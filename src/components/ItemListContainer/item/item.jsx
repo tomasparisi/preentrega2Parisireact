@@ -5,14 +5,14 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 
-const Item = ({ data }) => {
+const Item = ({ product }) => {
   return (
     <Card sx={{ maxWidth: 345, margin:2}}>
       <CardActionArea>
-        <CardMedia component="img" image={data.avatar_url} alt={data.type} />
+        <CardMedia component="img" image={product.avatar_url} alt={product.type} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {data.login}
+            {product.login}
           </Typography>
           <Typography variant="body2" color="text.secondary">
           </Typography>
