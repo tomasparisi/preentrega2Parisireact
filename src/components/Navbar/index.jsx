@@ -35,7 +35,9 @@ function NavBar() {
         <div className="nav-icon">
           <Link to="/shop">
             <img src={cart} alt="cart" className="logo" />
+            
           </Link>
+          <p>3</p>
         </div>
       </div>
     </nav>

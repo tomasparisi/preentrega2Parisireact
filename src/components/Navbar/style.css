@@ -1,4 +1,4 @@
-/* Navbar Container */
+
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -7,9 +7,8 @@
   padding: 10px 20px;
 }
 
-/* Logo */
 .logo {
-  width: 50px; /* Ajusta el tamaño del logo según tus necesidades */
+  width: 50px; 
   height: 50px;
 }
 
@@ -18,7 +17,7 @@
   height: 100px;
 }
 
-/* Navigation Links */
+
 .nav-ul {
   list-style: none;
   padding: 0;
@@ -28,33 +27,32 @@
 }
 
 .li {
-  margin: 0 10px; /* Espaciado entre los enlaces */
+  margin: 0 10px; 
 }
 
-/* Carrito y Lupa */
+
 .nav-right {
   display: flex;
   align-items: center;
 }
 
 .nav-icon {
-  font-size: 24px; /* Tamaño de los iconos de carrito y lupa */
-  margin-left: 20px; /* Espaciado entre los iconos */
-  color: white; /* Color de los iconos */
+  font-size: 24px; 
+  margin-left: 20px; 
+  color: white; 
 }
 
-/* Estilo de iconos */
+
 .nav-icon a {
   text-decoration: none;
   color: white;
 }
 
-/* Estilo al pasar el mouse sobre los enlaces */
-.li a:hover {
-  color: #ff5722; /* Cambia el color de los enlaces al pasar el mouse */
-}
 
-/* Estilo de los recuadros de productos */
+.li a:hover {
+  color: #ff5722; /}
+
+
 .nav-center {
   display: flex;
   align-items: center;
