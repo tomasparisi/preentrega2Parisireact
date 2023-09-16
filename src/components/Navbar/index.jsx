@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./style.css";
 import logo from "../../assets/icons/IconoNAV.png";
 import cart from "../../assets/icons/carrit.png"
-//import Buscador from "../buscador/buscador.jsx"
+
 
 function NavBar() {
   return (
@@ -33,7 +33,7 @@ function NavBar() {
       </div>
       <div className="nav-right">
         <div className="nav-icon">
-          <Link to="/cart">
+          <Link to="/shop">
             <img src={cart} alt="cart" className="logo" />
           </Link>
         </div>
