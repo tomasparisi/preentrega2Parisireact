@@ -2,15 +2,27 @@ import React, { useState, useEffect } from "react";
 import Item from "../ItemListContainer/item/item"; 
 import "./styles.css"; 
 import Spinner from "../spinner/spinner";
-import { collection, query, getDocs, documentId, where } from "firebase/firestore";
+import { collection, query, getDocs, documentId, where,addDoc } from "firebase/firestore";
 import { db } from "../firebase/firebaseConfig";
 import { useParams } from "react-router-dom";
+
 
 const ItemListContainer = () => {
   const [productData, setProductData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  console.log(productData);
+  const agregarElemento = async (e) => {
+    console.log("l")
+    e.preventDefault();
+    const elemento = {
+      id: id,
+      cantidad:"1"
+    }
+    const docRef = await addDoc(collection(db, "carrito"), {
+      elemento,
+    });
+  };
+
 
   const { id } = useParams();
 
@@ -42,10 +54,14 @@ const ItemListContainer = () => {
       ) : (
         productData.map((data) => {
           return <Item product={data} key={data.id} />;
+
         })
       )}
+      <button onClick={agregarElemento}>Agregar al carrito</button>
     </div>
   );
 };
+
+
 
 export default ItemListContainer;
