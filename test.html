@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            color: #007BFF;
+        }
+
+        .cart-items {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .cart-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            width: 80%;
+            max-width: 400px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .cart-item img {
+            max-width: 100%;
+        }
+
+        .checkout-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .checkout-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Carrito de Compras</h1>
+    <div class="cart-items">
+        <div class="cart-item">
+            <img src="producto1.jpg" alt="Producto 1">
+            <h3>Producto 1</h3>
+            <p>Precio: $50</p>
+        </div>
+        <div class="cart-item">
+            <img src="producto2.jpg" alt="Producto 2">
+            <h3>Producto 2</h3>
+            <p>Precio: $30</p>
+        </div>
+        <!-- Agrega más elementos del carrito aquí -->
+    </div>
+    <button class="checkout-button">Finalizar Carrito</button>
+</body>
+</html>

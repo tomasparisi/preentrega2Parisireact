@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Item from "../ItemListContainer/item/item"; 
-import "./styles.css"; 
+import DetalleItem from "./detalleItem";
 import Spinner from "../spinner/spinner";
 import { collection, query, getDocs, documentId, where,addDoc } from "firebase/firestore";
 import { db } from "../firebase/firebaseConfig";
@@ -46,18 +45,16 @@ const ItemListContainer = () => {
   }, [id]);
 
   return (
-    <div className="DetailContainer">
+    <div>
       {isLoading ? (
         <div className="Spinner">
           <Spinner />
         </div>
       ) : (
         productData.map((data) => {
-          return <Item product={data} key={data.id} />;
-
+          return <DetalleItem product={data} key={data.id} agregarElemento={agregarElemento} />;
         })
-      )}
-      <button onClick={agregarElemento}>Agregar al carrito</button>
+      )}       
     </div>
   );
 };

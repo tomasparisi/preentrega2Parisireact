@@ -4,6 +4,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea, Button, CardActions } from "@mui/material";
+import "./item.css"
 
 const Item = ({ product }) => {
   return (
@@ -26,7 +27,7 @@ const Item = ({ product }) => {
     </CardActionArea>
     <CardActions style={{ display: "flex", justifyContent: "center" }}>
       <Button size="small" color="primary"> 
-        Comprar
+        Ver detalle
       </Button>
     </CardActions>
   </Card>

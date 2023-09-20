@@ -4,10 +4,22 @@
 	margin: 40;
 }
 
+button {
+color: white;
+}
+
 .DetailContainer {
-	width: 90%;
-	display: flex;
+	display: grid;
+    grid-template-columns: 2fr 1fr;
 	justify-content: center;
-	align-items: center;
-	margin: 25px
+	margin: 25px;
+    gap: 25px;
+	width:800px;
+}
+
+.especificaciones {
+	font-size: 30px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-style: oblique;
+	box-sizing:initial
 }

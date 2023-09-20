@@ -4,6 +4,8 @@ import "./product.css";
 import { collection, query, getDocs, where } from "firebase/firestore";
 import { db } from "../../components/firebase/firebaseConfig";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 const TypeProduct = () => {
   const [productsData, setProductsData] = useState([]);
@@ -32,9 +34,13 @@ const TypeProduct = () => {
     <div className="DetailContainer">
       {productsData.map((data) => {
         return (
-          <div key={data.id}>
-            <Item product={data} key={data.id} />
-          </div>
+          <Link
+          to={`/details/${data.id}`}
+          key={data.id}
+          style={{ textDecoration: "none" }}
+        >
+          <Item product={data} /> 
+        </Link>
         );
       })}
     </div>
