@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
-import ItemShop from "./item/item"; 
-import "./styles.css"; 
+import DetalleItem from "./item/item"; // Asegúrate de importar DetalleItem correctamente
+import "./styles.css";
 import Spinner from "../spinner/spinner";
 import { Link } from "react-router-dom";
 import { collection, query, getDocs } from "firebase/firestore";
 import { db } from "../firebase/firebaseConfig";
 
 const ItemListContainer = () => {
-  const [productsData, setProductsData] = useState([]); 
+  const [productsData, setProductsData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const getProducts = async () => {
-      const q = query(collection(db, "carrito")); 
+      const q = query(collection(db, "carrito"));
       const docs = [];
       const querySnapshot = await getDocs(q);
 
@@ -20,13 +20,15 @@ const ItemListContainer = () => {
         docs.push({ ...doc.data(), id: doc.id });
       });
       setProductsData(docs);
+      setIsLoading(false); 
     };
     getProducts();
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-    
   }, []);
+
+ rio
+  const agregarElemento = (producto) => {
+
+  };
 
   return (
     <>
@@ -35,18 +37,10 @@ const ItemListContainer = () => {
           <Spinner />
         </div>
       ) : (
-        <div className="Cards-List"> 
-          {productsData.map((data) => { 
-            return (
-              <Link
-                to={`/details/${data.id}`}
-                key={data.id}
-                style={{ textDecoration: "none" }}
-              >
-                <ItemShop product={data} /> 
-              </Link>
-            );
-          })}
+        <div className="Cards-List">
+          {productsData.map((data) => (
+            <DetalleItem product={data} key={data.id} agregarElemento={agregarElemento} />
+          ))}
         </div>
       )}
     </>

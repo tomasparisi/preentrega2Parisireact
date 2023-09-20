@@ -6,7 +6,7 @@ import { db } from "../firebase/firebaseConfig";
 import { useParams } from "react-router-dom";
 
 
-const ItemListContainer = () => {
+const ItemShop = () => {
   const [productData, setProductData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -61,4 +61,4 @@ const ItemListContainer = () => {
 
 
 
-export default ItemListContainer;
+export default ItemShop;

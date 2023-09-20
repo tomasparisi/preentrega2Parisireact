@@ -21,5 +21,12 @@ color: white;
 	font-size: 30px;
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 	font-style: oblique;
-	box-sizing:initial
+	box-sizing:initial;
+
+}
+
+.descripcion {
+	text-decoration-color: #1d1d1d; 
+	text-decoration-thickness: 2px;
+	border:1px solid #000000;
 }
