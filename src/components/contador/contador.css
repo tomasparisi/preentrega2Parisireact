@@ -1,0 +1,27 @@
+.Count {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .contador {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    font-size: 1.5em;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #0074d9; /* Color de fondo */
+    color: #fff; /* Color de texto */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Efecto de transición */
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Cambia de color al pasar el ratón por encima */
+  }
+  

@@ -1,6 +1,9 @@
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import "./styles.css";
+import Counter from "../contador/contador";
+
+
 
 const DetalleItem = ({ product, agregarElemento }) => {
   return (
@@ -32,6 +35,8 @@ const DetalleItem = ({ product, agregarElemento }) => {
               <Typography>
                 <li className="especificaciones">{product.almacenamiento}</li>
               </Typography>
+              <Counter />
+       
             </>
           ) : (
             <>
@@ -41,12 +46,10 @@ const DetalleItem = ({ product, agregarElemento }) => {
               <Typography>
                 <li className="especificaciones">{product.respuesta}</li>
               </Typography>
-              <Typography>
-                <li className="especificaciones">{product.rgb}</li>
-              </Typography>
+              <Counter />
             </>
           )}
-          <button onClick={agregarElemento}>Agregar al carrito</button>
+          <button className="B" onClick={() => agregarElemento(product)}>Agregar al carrito</button>
         </div>
       </div>
       <Typography className="descripcion" fontSize="15px">

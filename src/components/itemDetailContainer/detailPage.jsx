@@ -10,12 +10,13 @@ const ItemShop = () => {
   const [productData, setProductData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const agregarElemento = async (e) => {
-    console.log("l")
-    e.preventDefault();
+
+  const agregarElemento = async (product) => {
     const elemento = {
       id: id,
-      cantidad:"1"
+      tipo: product.login,
+      img: product.avatar_url,
+      cantidad:{count}
     }
     const docRef = await addDoc(collection(db, "carrito"), {
       elemento,

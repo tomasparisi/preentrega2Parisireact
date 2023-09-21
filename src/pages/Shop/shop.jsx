@@ -4,6 +4,7 @@ import FilledAlerts from "../Alert/alert";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../components/firebase/firebaseConfig";
 import { TextField, Button } from "@mui/material";
+import Counter from "../../components/contador/contador"
 
 const styles = {
   containerShop: {
@@ -37,6 +38,7 @@ const ShopPage = () => {
   };
 
   return (
+    
     <div style={{ marginTop: "40px" }}>
       <form
         className="FormContainer"
@@ -71,6 +73,7 @@ const ShopPage = () => {
 
       {purchaseID && <FilledAlerts purchaseID={purchaseID} />}
     </div>
+    
   );
 };
 
