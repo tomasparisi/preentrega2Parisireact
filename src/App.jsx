@@ -2,6 +2,7 @@ import "./App.css";
 import Navbar from "./components/Navbar/index";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+
 //pages
 
 import ItemDetailContainer from "./components/itemDetailContainer/detailPage";

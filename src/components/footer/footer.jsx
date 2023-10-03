@@ -1,4 +1,3 @@
-import React from 'react'
 import { Box } from '@material-ui/core'
 
 const Footer = () => {
@@ -18,4 +17,4 @@ const Footer = () => {
     )
 }
 
-export default Footer
+export default Footer;

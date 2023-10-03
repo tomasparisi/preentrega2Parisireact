@@ -5,7 +5,7 @@ import Counter from "../contador/contador";
 
 
 
-const DetalleItem = ({ product, agregarElemento }) => {
+const DetalleItem = ({ product, agregarElemento, count, setCount }) => {
   return (
     <div className="DetailContainer">
       <CardMedia
@@ -14,7 +14,6 @@ const DetalleItem = ({ product, agregarElemento }) => {
         alt={product.type}
       />
 
-      {/* Sección de las especificaciones */}
       <div className="medio">
         <div id="detalleContainer">
           <Typography gutterBottom variant="h2" component="div">
@@ -35,9 +34,12 @@ const DetalleItem = ({ product, agregarElemento }) => {
               <Typography>
                 <li className="especificaciones">{product.almacenamiento}</li>
               </Typography>
-              <Counter />
+              <Typography variant="body1" color="text.primary" fontSize="20px" className="precio">
+              ${product.precio * count}
+              </Typography>
+              <Counter count={count} setCount={setCount}/>
        
-            </>
+            </> 
           ) : (
             <>
               <Typography>
@@ -46,7 +48,10 @@ const DetalleItem = ({ product, agregarElemento }) => {
               <Typography>
                 <li className="especificaciones">{product.respuesta}</li>
               </Typography>
-              <Counter />
+              <Typography variant="body1" color="text.primary" fontSize="20px" className="precio">
+              ${product.precio * count}
+              </Typography>
+              <Counter count={count} setCount={setCount}/>
             </>
           )}
           <button className="B" onClick={() => agregarElemento(product)}>Agregar al carrito</button>

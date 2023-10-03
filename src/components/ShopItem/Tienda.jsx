@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import DetalleItem from "./detalleItem";
+import MuestraProducto from "./DetalleTienda";
 import Spinner from "../spinner/spinner";
 import { collection, query, getDocs, documentId, where,addDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebaseConfig";
@@ -7,31 +7,16 @@ import { useParams } from "react-router-dom";
 
 
 
-const ItemShop = () => {
+const VistaTienda = () => {
   const [productData, setProductData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [count, setCount] = useState(1);
-
-
-  const agregarElemento = async (product) => {
-    const elemento = {
-      id: id,
-      tipo: product.login,
-      img: product.avatar_url,
-      cantidad: count
-    }
-    const docRef = await addDoc(collection(db, "carrito"), {
-      elemento,
-    });
-  };
-
 
   const { id } = useParams();
 
   useEffect(() => {
     const getProduct = async () => {
       const q = query(
-        collection(db, "products"),
+        collection(db, "carrito"),
         where(documentId(), "==", id)
       );
       const docs = [];
@@ -56,7 +41,7 @@ const ItemShop = () => {
         </div>
       ) : (
         productData.map((data) => {
-          return <DetalleItem product={data} key={data.id} agregarElemento={agregarElemento} count={count} setCount={setCount}/>;
+          return <MuestraProducto product={data} key={data.id} agregarElemento={agregarElemento} count={count} setCount={setCount}/>;
         })
       )}       
     </div>
@@ -65,4 +50,4 @@ const ItemShop = () => {
 
 
 
-export default ItemShop;
+export default VistaTienda;

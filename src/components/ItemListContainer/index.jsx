@@ -4,7 +4,7 @@ import "./styles.css";
 import Spinner from "../spinner/spinner";
 import { Link } from "react-router-dom";
 import { collection, query, getDocs } from "firebase/firestore";
-import { db } from "../firebase/firebaseConfig";
+import { db } from "../../firebase/firebaseConfig";
 
 const ItemListContainer = () => {
   const [productsData, setProductsData] = useState([]); 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Item from "../../components/ItemListContainer/item/item"; 
 import "./product.css"; 
 import { collection, query, getDocs, where } from "firebase/firestore";
-import { db } from "../../components/firebase/firebaseConfig";
+import { db } from "../../firebase/firebaseConfig";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
