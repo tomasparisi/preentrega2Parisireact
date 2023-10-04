@@ -3,28 +3,41 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
+import { Button, CardActionArea, CardActions } from '@mui/material';
+import "./detalle.css";
 
-export default function MuestraProducto(carrito) {
-  return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
-        <CardMedia
-          component={carrito.img}
-          height="140"
-          image="/static/images/cards/contemplative-reptile.jpg"
-          alt="green iguana"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
-  );
-}
+const MuestraProducto = ({ carrito }) => {
+  
+    return (
+      <div className="product-container">
+      <Card sx={{ maxWidth: 345 }}>
+        <CardActionArea>
+          <CardMedia
+            component="img"
+            height="240"
+            image={carrito.elemento.img}
+
+          />
+
+            <Typography gutterBottom variant="h5" component="div">
+              {carrito.elemento.nombre}
+            </Typography>
+            <Typography gutterBottom variant="h8" component="div">
+              {carrito.elemento.tipo}
+              </Typography>
+              <Typography gutterBottom variant="h8" component="div">
+              ${carrito.elemento.precio}
+            </Typography>
+            <Typography gutterBottom variant="h8" component="div">
+              unidades: {carrito.elemento.cantidad}
+            </Typography>
+            
+
+        </CardActionArea>
+      </Card>
+      </div>
+      
+    );
+    
+  }
+export default MuestraProducto;

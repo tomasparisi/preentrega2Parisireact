@@ -6,8 +6,10 @@ import ShopPage from "../../components/ShopItem/formulario";
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="Tienda">
+      <div className="carrito">
       <VistaTienda /> 
+      </div>
       <ShopPage />
     </div>
   );

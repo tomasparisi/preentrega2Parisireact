@@ -15,10 +15,11 @@ const ItemShop = () => {
 
   const agregarElemento = async (product) => {
     const elemento = {
-      id: id,
-      tipo: product.login,
+      nombre: product.login,
+      tipo: product.type,
       img: product.avatar_url,
-      cantidad: count
+      cantidad: count,
+      precio: count*product.precio
     }
     const docRef = await addDoc(collection(db, "carrito"), {
       elemento,

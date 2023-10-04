@@ -9,6 +9,7 @@ import ItemDetailContainer from "./components/itemDetailContainer/detailPage";
 import ItemListContainer from "./components/ItemListContainer/index";
 import TypeProduct from "./pages/products/products";
 import ShopPage from "./pages/Shop/shop";
+import HomePage from "./pages/Shop/shop";
 
 
 
@@ -22,7 +23,7 @@ const App = () => {
           <Route path="/" element={<ItemListContainer />} />
           <Route path="/details/:id" element={<ItemDetailContainer />} />
           <Route path="/product/:type" element={<TypeProduct />} />
-          <Route path="/shop" element={<ShopPage/>}/>
+          <Route path="/shop" element={<HomePage/>}/>
         </Routes>
       </div>
     </Router>
