@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./formulario.css";
 import FilledAlerts from "../../pages/Alert/alert";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, getDocs, deleteDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebaseConfig";
 import { TextField, Button } from "@mui/material";
+
+
 
 
 
@@ -21,42 +23,29 @@ const initialState = {
   city: "",
 };
 
-async function deleteCollection(db, collectionPath, batchSize) {
-    const collectionRef = db.collection(collectionPath);
-    const query = collectionRef.orderBy('carrito').limit(batchSize);
-  
-    return new Promise((resolve, reject) => {
-      deleteQueryBatch(db, query, resolve).catch(reject);
-    });
-  }
-  
-  async function deleteQueryBatch(db, query, resolve) {
-    const snapshot = await query.get();
-  
-    const batchSize = snapshot.size;
-    if (batchSize === 0) {
-      // When there are no documents left, we are done
-      resolve();
-      return;
-    }
-  
-    // Delete documents in a batch
-    const batch = db.batch();
-    snapshot.docs.forEach((doc) => {
-      batch.delete(doc.ref);
-    });
-    await batch.commit();
-  
-    // Recurse on the next process tick, to avoid
-    // exploding the stack.
-    process.nextTick(() => {
-      deleteQueryBatch(db, query, resolve);
-    });
-  }
 
 const ShopPage = () => {
   const [values, setValues] = useState(initialState);
   const [purchaseID, setPurchaseID] = useState("");
+
+  const eliminarColeccion = () => {
+    const coleccionRef = db.collection('carrito');
+
+    coleccionRef
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          coleccionRef.doc(doc.id).delete();
+        });
+      })
+      .then(() => {
+        console.log('Colección eliminada exitosamente.');
+      })
+      .catch((error) => {
+        console.error('Error al eliminar la colección: ', error);
+      });
+  };
+
 
   const handleOnChange = (e) => {
     const { value, name } = e.target;
@@ -101,12 +90,12 @@ const ShopPage = () => {
           value={values.city}
           onChange={handleOnChange}
         />
-        <Button variant="contained" className="btnASendAction" type="submit">
-          Send
+        <Button  id="eliminarColeccionButton" onClick={eliminarColeccion} variant="contained" className="btnASendAction" type="submit">
+          Comprar
         </Button>
       </form>
 
-      {purchaseID && <FilledAlerts purchaseID={purchaseID} />}
+      {purchaseID && <FilledAlerts purchaseID={purchaseID} onClick={eliminarColeccion}/>}
     </div>
 
   );
