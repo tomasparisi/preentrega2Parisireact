@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import "./detalle.css";
 
-const MuestraProducto = ({ carrito }) => {
+const MuestraProducto = ({ carrito, eliminarElemento }) => {
   
     return (
       <div className="product-container">
@@ -31,6 +31,7 @@ const MuestraProducto = ({ carrito }) => {
             <Typography gutterBottom variant="h8" component="div">
               unidades: {carrito.elemento.cantidad}
             </Typography>
+            <Button onClick={() => eliminarElemento(carrito.id)}>Eliminar</Button>
             
 
         </CardActionArea>

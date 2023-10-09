@@ -9,6 +9,7 @@ import ItemDetailContainer from "./components/itemDetailContainer/detailPage";
 import ItemListContainer from "./components/ItemListContainer/index";
 import TypeProduct from "./pages/products/products";
 import HomePage from "./pages/Shop/shop";
+import Footer from "./components/footer/footer";
 
 
 
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/product/:type" element={<TypeProduct />} />
           <Route path="/shop" element={<HomePage/>}/>
         </Routes>
+        <Footer />
       </div>
     </Router>
   );

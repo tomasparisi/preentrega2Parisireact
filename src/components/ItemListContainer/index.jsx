@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Item from "./item/item"; 
+import Item from "./Item/item"; 
 import "./styles.css"; 
 import Spinner from "../spinner/spinner";
 import { Link } from "react-router-dom";

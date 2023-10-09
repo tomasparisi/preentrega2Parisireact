@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./formulario.css";
 import FilledAlerts from "../../pages/Alert/alert";
-import { collection, addDoc, getDocs, deleteDoc } from "firebase/firestore";
+import { collection, addDoc, getDocs, deleteDoc, query } from "firebase/firestore";
 import { db } from "../../firebase/firebaseConfig";
 import { TextField, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -27,23 +28,21 @@ const initialState = {
 const ShopPage = () => {
   const [values, setValues] = useState(initialState);
   const [purchaseID, setPurchaseID] = useState("");
+  const navigate = useNavigate();
 
-  const eliminarColeccion = () => {
-    const coleccionRef = db.collection('carrito');
-
-    coleccionRef
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          coleccionRef.doc(doc.id).delete();
-        });
-      })
-      .then(() => {
-        console.log('Colección eliminada exitosamente.');
-      })
-      .catch((error) => {
-        console.error('Error al eliminar la colección: ', error);
+  const vaciarCarrito = async () => {
+    try {
+      const q = query(collection(db, "carrito"));
+      const querySnapshot = await getDocs(q);
+  
+      querySnapshot.forEach(async (doc) => {
+        await deleteDoc(doc.ref);
       });
+  
+      console.log("Todos los documentos en la colección han sido eliminados correctamente.");
+    } catch (error) {
+      console.error("Error al eliminar documentos: ", error);
+    }
   };
 
 
@@ -59,6 +58,8 @@ const ShopPage = () => {
     });
     setPurchaseID(docRef.id);
     setValues(initialState);
+    vaciarCarrito()
+    navigate("/")
   };
 
   return (
@@ -90,12 +91,12 @@ const ShopPage = () => {
           value={values.city}
           onChange={handleOnChange}
         />
-        <Button  id="eliminarColeccionButton" onClick={eliminarColeccion} variant="contained" className="btnASendAction" type="submit">
+        <Button  id="eliminarColeccionButton" variant="contained" className="btnASendAction" type="submit">
           Comprar
         </Button>
       </form>
 
-      {purchaseID && <FilledAlerts purchaseID={purchaseID} onClick={eliminarColeccion}/>}
+      {purchaseID && <FilledAlerts purchaseID={purchaseID} />}
     </div>
 
   );
