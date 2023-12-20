@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Item from "./Item/item"; 
-import "./styles.css"; 
-import Spinner from "../spinner/spinner";
+import Item from "./Item/Item"; 
+import "./Styles.css"; 
+import Spinner from "../Spinner/Spinner";
 import { Link } from "react-router-dom";
 import { collection, query, getDocs } from "firebase/firestore";
-import { db } from "../../firebase/firebaseConfig";
+import { db } from "../../FireBase/FireBaseConfig";
 
 const ItemListContainer = () => {
   const [productsData, setProductsData] = useState([]); 

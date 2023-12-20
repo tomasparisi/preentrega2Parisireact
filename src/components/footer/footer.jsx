@@ -17,7 +17,7 @@ const Footer = () => {
           edge="end"
           color="inherit"
           aria-label="GitHub"
-          href="https://github.com/tu-usuario-de-github"
+          href=""
           target="_blank"
         >
           <GitHubIcon />

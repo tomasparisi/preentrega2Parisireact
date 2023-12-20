@@ -1,7 +1,7 @@
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import "./styles.css";
-import Counter from "../contador/contador";
+import Counter from "../Contador/Contador";
 
 
 

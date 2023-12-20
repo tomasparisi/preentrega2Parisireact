@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import MuestraProducto from "./DetalleTienda";
-import Spinner from "../spinner/spinner";
+import Spinner from "../Spinner/Spinner";
 import { collection, query, getDocs, deleteDoc, doc} from "firebase/firestore";
-import { db } from "../../firebase/firebaseConfig";
+import { db } from "../../FireBase/FireBaseConfig";
 
 const VistaTienda = () => {
   const [productsData, setProductsData] = useState([]);

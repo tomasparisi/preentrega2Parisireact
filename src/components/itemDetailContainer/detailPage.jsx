@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import DetalleItem from "./detalleItem";
-import Spinner from "../spinner/spinner";
+import DetalleItem from "./DetalleItem";
+import Spinner from "../Spinner/Spinner";
 import { collection, query, getDocs, documentId, where,addDoc } from "firebase/firestore";
-import { db } from "../../firebase/firebaseConfig";
+import { db } from "../../FireBase/FireBaseConfig";
 import { useParams } from "react-router-dom";
 
 
